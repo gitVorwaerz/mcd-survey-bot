@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>🍟 McDonald's Survey-Bot</title>
+  <style>
+    :root { color-scheme: dark; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      font-family: system-ui, -apple-system, sans-serif; background: #1a1208; color: #f5f0e6;
+    }
+    .card {
+      max-width: 520px; margin: 24px; padding: 32px; border-radius: 20px;
+      background: #241a0d; border: 1px solid #3d2f1a; text-align: center;
+    }
+    h1 { color: #ffbc0d; margin-top: 0; }
+    code {
+      background: #3d2f1a; padding: 2px 8px; border-radius: 6px; color: #ffbc0d;
+      font-size: 0.95em; word-break: break-all;
+    }
+    .steps { text-align: left; line-height: 1.7; }
+    .footer { margin-top: 24px; font-size: 0.85em; color: #8a7a5f; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>🍟 McDonald's Survey-Bot</h1>
+    <p>Dieser Bot füllt die McDonald's-Deutschland-Umfrage automatisch aus und liefert den 50-Cent-Gutschein-Code.</p>
+    <div class="steps">
+      <ol>
+        <li>Bot bei <a href="https://t.me/BotFather" style="color:#ffbc0d">@BotFather</a> erstellen → Token als <code>TELEGRAM_TOKEN</code> in den Vercel-Env-Variablen hinterlegen.</li>
+        <li>Webhook setzen: <code>/api/setup?url=https://DEINE-APP.vercel.app/api/webhook</code></li>
+        <li>Dem Bot den Code von der Quittung schicken – fertig. 🧾🡢🥤</li>
+      </ol>
+    </div>
+    <p class="footer">API-Endpoints: <code>/api/webhook</code> · <code>/api/setup</code></p>
+  </div>
+</body>
+</html>
