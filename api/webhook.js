@@ -25,11 +25,16 @@ export default async function handler(req, res) {
   }
 
   let update;
-  try {
-    update = JSON.parse(req.body || '{}');
-  } catch {
-    res.status(400).json({ error: 'invalid json' });
-    return;
+  // Vercel liefert req.body bei application/json bereits als Objekt
+  if (typeof req.body === 'string') {
+    try {
+      update = JSON.parse(req.body || '{}');
+    } catch {
+      res.status(400).json({ error: 'invalid json' });
+      return;
+    }
+  } else {
+    update = req.body || {};
   }
 
   // Health-/Webhook-Bestätigung von Telegram
