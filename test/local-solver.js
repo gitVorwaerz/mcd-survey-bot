@@ -12,5 +12,8 @@ console.log('code:', result.code);
 console.log('message:', result.message);
 console.log('duration:', ((Date.now() - t0) / 1000).toFixed(1) + 's');
 console.log('screenshot:', result.screenshotPath);
+if (result.screenshots && result.screenshots.length) {
+  console.log('screenshots:', result.screenshots.join(', '));
+}
 console.log('===== LOG =====');
 console.log(result.logs.join('\n'));
